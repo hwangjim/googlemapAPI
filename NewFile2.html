@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Homework에 -->
+    <title>Road to Anfield::::::::::::::::::::::::::::</title>
+    <style type = "text/css">
+        * {
+            margin: 5px;
+            padding: 5px;
+        }
+        #map {
+            width: 1500px;
+            height: 600px;
+            border: 3px solid blue;
+        }
+        #anfieldbutton {
+            background-color : red;
+        }
+        #evertonbutton {
+            background-color : blue;
+        }
+        #Manutdbutton {
+            background-color : pink;
+        }
+        #chelseabutton {
+            background-color : lightblue;
+        }
+    </style>
+    <script src = "http://maps.google.com/maps/api/js?key=본인인증키region=kr"></script>
+</head>
+<body>
+    
+    <div id = "map">
+
+    </div>
+    <button id = "anfieldbutton">YNWA</button>
+    
+    <button id = "evertonbutton">Everton</button>
+    <button id = "Manutdbutton">Manutd</button>
+    <button id = "chelseabutton">chelsea</button>
+    
+    
+    
+    <script type = "text/javascript">
+        var locations = [
+            { place: 1, name :"IT", lat:37.4999269, lng:127.0365526  },
+            { place: 2, name :"Anfield", lat:53.4307007, lng:-2.96291 },
+            { place: 3, name : "Goodison Park", lat:53.438787, lng:-2.96631933 },
+            { place: 4, name : "Old trafford", lat:53.462094, lng:-2.2766419 },
+            { place: 5, name : "Stamford bridge", lat:51.481663, lng:-0.1909565 }
+        ];
+       
+        //인포윈도우
+      
+        var btn1 = document.getElementById('anfieldbutton');
+        btn1.addEventListener('click', func1, );
+        
+        var btn2 = document.getElementById('evertonbutton');
+    btn2.addEventListener('click', func2, );
+    var btn3 = document.getElementById('Manutdbutton');
+    btn3.addEventListener('click', func3, );
+    var btn4 = document.getElementById('chelseabutton');
+    btn4.addEventListener('click', func4, );
+    
+    
+    
+    // 전역변수로 var map 만들기
+    
+    var map;
+    function initMap() {
+        var it ={lat:37.4999269, lng:127.0365526};
+        map = new google.maps.Map(
+            document.getElementById("map"),
+            //{zoom:17, center:{위도,경도}}
+            {zoom:17, center:it}
+            );
+        
+            new google.maps.Marker({
+                position:it, 
+                map:map, 
+           
+
+            icon : {
+                url : "images/IT아카데미.png",
+                labelOrigin : new google.maps.Point(100,55)
+                
+                
+                
+            }
+        }
+        );
+        alert(":::::코딩 너무 어렵다맨이야...:::::");
+    }
+    
+    initMap();
+    
+    function func1() {
+        // 마커 유지한채 다른곳 보여줌 
+        var anfield = {lat:53.4307007, lng:-2.96291};
+        // anfield 좌표로 위치 고정되어 나옴 
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center : anfield
+        });
+        
+        new google.maps.Marker({
+            position:anfield, 
+            map:map, 
+            
+            icon : {
+                url : "images/로고.png",
+                labelOrigin : new google.maps.Point(100,55)
+            }
+        }
+        );
+        alert(":::::You'll Never Walk Alone:::::");
+    }
+    
+    function func2(){
+        // 역삼역 마커가 없어진 이유 = map을 새로 만들었기 때문
+        var Everton = {lat:53.438787, lng:-2.9663193};
+        // Everton 좌표로 위치 고정되어 나옴 
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center : Everton
+        });
+        
+        new google.maps.Marker({
+            position:Everton, 
+            map:map, 
+            
+            icon : {
+                url : "images/에버튼.png",
+                labelOrigin : new google.maps.Point(100,55)
+            }
+        }
+        );
+        alert(":::::에버튼 축구 왕못함:::::");
+    }
+    
+    function func3(){
+        // 역삼역 마커가 없어진 이유 = map을 새로 만들었기 때문
+        var Manutd = {lat:53.462094, lng:-2.2766419};
+        // Manutd 좌표로 위치 고정되어 나옴 
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center : Manutd
+        });
+        
+        new google.maps.Marker({
+            position:Manutd, 
+            map:map, 
+            
+            icon : {
+                url : "images/맨유.png",
+                labelOrigin : new google.maps.Point(100,55)
+            }
+        }
+        );
+        alert(":::::맨유 챔스 못가죠? 아무것도 못하죠?:::::");
+    }
+    function func4(){
+        // 역삼역 마커가 없어진 이유 = map을 새로 만들었기 때문
+        var chelsea = {lat:51.481663, lng:-0.1909565};
+        // chelsea 좌표로 위치 고정되어 나옴 
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center : chelsea
+        });
+        
+        new google.maps.Marker({
+            position:chelsea, 
+            map:map, 
+            
+            icon : {
+                url : "images/첼시.png",
+                labelOrigin : new google.maps.Point(100,55)
+            }
+        }
+        );
+        alert(":::::이번에 영입 다실패했죠?:::::");
+    }
+    
+ 
+    
+    
+   
+    
+</script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>놀이동산 지도</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+   crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=★인증키 넣으세요!★" ></script>
+<style>
+#map_ma {width:100%; height:400px; clear:both; border:solid 1px red;}
+</style>
+</head>
+<body>
+<div id="map_ma"></div>
+<button id="btn1">에버랜드 (˶◕ ‿◕˶✿) 아마존익스프레스로! </button>
+<button id="btn2">롯데월드 (๐^╰╯^๐)♬ </button>
+<script type="text/javascript">
+        $(document).ready(function() {
+            var myLatlng = new google.maps.LatLng(37.29206934902729,127.20567623811185); // 위치값 위도 경도
+    var Y_point            = 37.29206934902729;        // Y 좌표
+    var X_point            = 127.20567623811185;        // X 좌표
+    var zoomLevel        = 15;                // 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
+    var markerTitle        = "에버랜드";        // 현재 위치 마커에 마우스를 오버을때 나타나는 정보
+    var markerMaxWidth    = 200;                // 마커를 클릭했을때 나타나는 말풍선의 최대 크기
+
+    
+// 말풍선 내용
+    var contentString    = '<div>' +
+    '<h2>환상의 나라로 에버랜드! 아마존익스프레스! </h2>'+
+    '<p>내 앞에 있는 안내 근무자의 안내를 받아 한 자리에 두 분씩 한 보트에 열 분이서! 머리 젖습니다! 옷도 젖습니다! 신발 젖습니다! 양말까지 젖습니다! 옷 머리 신발 양말 다 젖습니다! 물에 젖고 물만 맞는 여기는 아마존! 아마존조로존조로존조로존! 물에 젖고 물만 맞는 여기는 아마존입니다! ∑ദ്ദി˙◡･) </p>' +
+
+    '</div>';
+    var myLatlng = new google.maps.LatLng(Y_point, X_point);
+    var mapOptions = {
+                        zoom: zoomLevel,
+                        center: myLatlng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    }
+    var map = new google.maps.Map(document.getElementById('map_ma'), mapOptions);
+    var marker = new google.maps.Marker({
+                                            position: myLatlng,
+                                            map: map,
+                                            title: markerTitle
+    });
+    var infowindow = new google.maps.InfoWindow(
+                                                {
+                                                    content: contentString,
+                                                    maxWizzzdth: markerMaxWidth
+                                                }
+            );
+    var btn1=document.getElementById('btn1');
+   btn1.addEventListener('click',cc1);
+   var btn2=document.getElementById('btn2');
+   btn2.addEventListener('click',cc2);
+   
+   function cc1(){
+      var ll={lat:37.29206934902729, lng:127.20567623811185};
+      map.panTo(ll); // 맵 중심 이동
+      map.setZoom(15); // 지도확대레벨
+   }
+   function cc2(){
+      var ll={lat:37.51112 , lng:127.095973};
+      map.panTo(ll); // 맵 중심 이동
+      map.setZoom(15); // 지도확대레벨
+   }
+    
+    
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map, marker);
+    });
+    
+});
+</script>
+</body>
+</html> -->
